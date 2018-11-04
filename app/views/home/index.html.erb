@@ -1,0 +1,13 @@
+<h1>Welcome to Chambers!</h1>
+
+
+<% if current_user %>
+Logged in as <%= current_user.email %>
+  <%= link_to 'logout', logout_path %>
+  <%= link_to 'Properties', controller: 'properties' %>
+<% else %>
+  <%= link_to 'signup', signup_path %>
+  <%= link_to 'login', login_path %>
+<% end %>
+
+<p id=”notice”><%= notice %></p>
