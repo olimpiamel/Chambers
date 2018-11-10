@@ -55,3 +55,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#devise used for creating user accounts
+gem 'devise'
+
+#gem to show alerts about log in attempts
+gem 'toastr-rails'

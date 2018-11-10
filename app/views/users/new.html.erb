@@ -2,7 +2,7 @@
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
 
-      <h2>Form is invalid</h2>
+      <h2>Please correct the errors</h2>
       <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -11,16 +11,31 @@
 
   <% end %>
 
+  <%= form_for @user do |f| %>
+
+    <%= f.label :name %><br />
+    <%= f.text_field :name %><br />
+
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname %><br />
+
+    <%= f.label :address %><br />
+    <%= f.text_field :address %><br />
+
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %><br />
 
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.email_field :email %><br />
 
     <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password %><br />
 
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation %><br /><br />
 
   <%= f.submit "Sign Up" %>
-  
+
+  <% end %>
+
 <% end %>

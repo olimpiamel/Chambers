@@ -11,18 +11,20 @@
 
   <body>
 
-    <% if current_user %>
-    Logged in as <%= current_user.email %>
-      <%= link_to 'logout', logout_path %>
-    <% else %>
-      <%= link_to 'signup', signup_path %>
-      <%= link_to 'login', login_path %>
-    <% end %>
-
     <% flash.each do |name, msg| %>
      <%= content_tag :div, msg, id: "flash_#{name}" %>
     <% end %>
 
     <%= yield %>
+
+    <% unless flash.empty? %>
+         <script type="text/javascript">
+              <% flash.each do |f| %>
+    	      <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+    	     	 toastr['<%= type %>']('<%= f[1] %>');
+    	   <% end %>
+         </script>
+    <% end %>
+
   </body>
 </html>
