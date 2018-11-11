@@ -18,6 +18,11 @@
   <%= @property.description %>
 </p>
 
+<p>
+  <strong>Images:</strong>
+  <%= link_to(image_tag(@property.image.thumb.url, alt: 'Image'), @property.image.url, target: '_blank') if @property.image? %>
+</p>
+
 <h2>Comments</h2>
 <%= render @property.comments %>
 

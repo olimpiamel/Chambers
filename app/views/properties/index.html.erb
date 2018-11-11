@@ -1,4 +1,4 @@
-<h1>Listing properties</h1>
+<h1>Available properties</h1>
 
 <%= link_to 'New Property', new_property_path %>
 
@@ -8,6 +8,7 @@
     <th>Address</th>
     <th>Price</th>
     <th>Description</th>
+    <th>Image</th>
     <th colspan="2"></th>
   </tr>
 
@@ -17,6 +18,8 @@
       <td><%= property.address %></td>
       <td><%= property.price %></td>
       <td><%= property.description %></td>
+      <td><%= property.image %></td>
+
       <td><%= link_to 'Show', property_path(property) %></td>
       <td><%= link_to 'Edit', edit_property_path(property) %></td>
       <td><%= link_to 'Destroy', property_path(property),
