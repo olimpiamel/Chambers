@@ -9,6 +9,9 @@
     <%= label_tag :password %><br />
     <%= password_field_tag :password %><br /><br />
 
-    <%= submit_tag "Log In" %>
+    <%= submit_tag "Log In" %><br />
+
+    <p><strong>Don't have an account yet?</strong></p>
+    <%= link_to 'Sign up', signup_path %>
 
 <% end %>

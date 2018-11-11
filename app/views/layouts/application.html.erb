@@ -15,6 +15,7 @@
      <%= content_tag :div, msg, id: "flash_#{name}" %>
     <% end %>
 
+    <%= render 'layouts/navigation' %>
     <%= yield %>
 
     <% unless flash.empty? %>

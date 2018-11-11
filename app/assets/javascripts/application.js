@@ -16,3 +16,5 @@
 //= require_tree .
 
 *= require toastr
+
+//= require bootstrap-sprockets

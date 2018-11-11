@@ -66,3 +66,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'file_validators'
+
+gem 'bootstrap-sass'
+
+gem 'jquery-rails'
