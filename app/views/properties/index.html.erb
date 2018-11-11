@@ -8,8 +8,8 @@
     <th>Address</th>
     <th>Price</th>
     <th>Description</th>
-    <th>Image</th>
-    <th colspan="2"></th>
+
+    <th colspan="5"></th>
   </tr>
 
   <% @properties.each do |property| %>
@@ -18,7 +18,7 @@
       <td><%= property.address %></td>
       <td><%= property.price %></td>
       <td><%= property.description %></td>
-      <td><%= property.image %></td>
+
 
       <td><%= link_to 'Show', property_path(property) %></td>
       <td><%= link_to 'Edit', edit_property_path(property) %></td>
@@ -28,3 +28,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'Log out', logout_path %>

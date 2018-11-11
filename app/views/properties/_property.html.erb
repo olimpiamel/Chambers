@@ -1,0 +1,6 @@
+<h2><%= link_to property.title, property_path(property) %></h2>
+
+<p><%= truncate(post.body, length: 150) %></p>
+
+<p><%= link_to 'Edit', edit_property_path(property) %></p>
+<hr>

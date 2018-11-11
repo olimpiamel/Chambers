@@ -20,8 +20,16 @@
 
 <p>
   <strong>Images:</strong>
-  <%= link_to(image_tag(@property.image.thumb.url, alt: 'Image'), @property.image.url, target: '_blank') if @property.image? %>
+
 </p>
+
+<% if @property.images? %>
+  <ul>
+    <% @property.images.each do |image| %>
+      <li><%= link_to(image_tag(image.big_thumb.url, alt: 'Image'), image.url, target: '_blank') %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <h2>Comments</h2>
 <%= render @property.comments %>

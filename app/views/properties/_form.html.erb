@@ -1,15 +1,5 @@
 <%= form_with model: @property, local: true do |form| %>
 
-<% if @property.image? %>
-    <%= image_tag @property.image.thumb.url %>
-    <div>
-      <%= label_tag :remove_image do %>
-        Remove image
-        <%= form.check_box :remove_image %>
-      <% end %>
-    </div>
-<% end %>
-
   <% if @property.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -45,8 +35,8 @@
   </p>
 
   <p>
-    <%= form.label :image %><br>
-    <%= form.file_field :image %>
+    <%= form.label :images %><br>
+    <%= form.file_field :images, multiple: true %>
     <%= form.hidden_field :image_cache %>
   </p>
 

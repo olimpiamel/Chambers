@@ -6,6 +6,7 @@ class Property < ApplicationRecord
   validates :address, presence: true, length: {minimum: 10}
   validates :image, file_size: {less_than: 5.megabytes}
 
-  mount_uploader :image, ImageUploader
+  mount_uploaders :images, ImageUploader
+  serialize :images, JSON
 
 end

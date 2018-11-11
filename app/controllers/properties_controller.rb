@@ -19,7 +19,7 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
 
     if @property.save
-      redirect_to @property
+      redirect_to properties_path
     else
       render 'new'
     end
@@ -33,6 +33,7 @@ class PropertiesController < ApplicationController
     else
       render 'edit'
     end
+
   end
 
   def destroy
@@ -44,7 +45,8 @@ end
 
   private
   def property_params
-    params.require(:property).permit(:title, :address, :price, :description, :image, :remove_image, :image_cache)
+    params.require(:property).permit(:title, :address, :price, :description, :image, {images: []})
   end
+
 
 end
